@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.12)
+project(polypart LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 11)
+add_library(polypartition ./src/polypartition.cpp)
+target_link_libraries(polypartition -lm)
+if (EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/test)
+    add_subdirectory(./test)
+endif ()
